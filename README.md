@@ -30,10 +30,33 @@
     <!-- without any modification as string, file is injected without creating a new file -->
 4.  Webpack loaders // to import things that assets modules cant handle
     <!-- Explicitly we need to install packages for the loaders -->
-         <!-- other js modules, css,sass,handlebars,xml and much more -->
-         <!-- webpack loaders are JS Libraries that help you to import that stuff -->
-        4.1. import css
-        style-loader
-        reads content of css file and returns content only
-        css-loader
-        injects the style tags into the bundle of the respective component
+    <!-- other js modules, css,sass,handlebars,xml and much more -->
+    <!-- webpack loaders are JS Libraries that help you to import that stuff -->
+
+    4.1. import css
+    style-loader
+    reads content of css file and returns content only
+    css-loader
+    injects the style tags into the bundle of the respective component
+    4.2--
+    {
+    test:/\.scss$/,
+    use:[
+    'style-loader','css-loader','sass-loader'
+    ] //order matters in the array
+    }
+
+    $$
+    npm install sass-loader sass --save-dev
+
+    4.3
+    import other JS files into our JS file
+    --It is done implicitly
+    $$using babel for using modern JS// see webpack.config.js
+    $$
+
+5.  Plugins
+     <!-- JS libraries which do things beyong imports only as done by loaders -->
+    5.1 Reduce size of bundle
+    ##const TerserPlugin = require('terser-webpack-plugin');
+    ##plugins: [new TerserPlugin()]
