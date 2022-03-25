@@ -1,0 +1,23 @@
+{
+  "name": "webpacktutorials",
+  "version": "1.0.0",
+  "description": "basics of webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ap221882/webpack-tutorials.git"
+  },
+  "author": "Ajay Pathak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ap221882/webpack-tutorials/issues"
+  },
+  "homepage": "https://github.com/ap221882/webpack-tutorials#readme",
+  "devDependencies": {
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
+}
