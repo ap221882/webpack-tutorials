@@ -56,7 +56,9 @@
     $$
 
 5.  Plugins
-     <!-- JS libraries which do things beyong imports only as done by loaders -->
+    <!-- JS libraries which do things beyong imports only as done by loaders -->
     5.1 Reduce size of bundle
     ##const TerserPlugin = require('terser-webpack-plugin');
     ##plugins: [new TerserPlugin()]
+    5.2 Extracting css into a separate bundle with mini-css-extract-plugin
+    //extracts css of all components and saves them in a single file--here styles.css
