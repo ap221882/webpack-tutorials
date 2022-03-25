@@ -56,7 +56,7 @@
     $$
 
 5.  Plugins
-     <!-- JS libraries which do things beyong imports only as done by loaders -->
+       <!-- JS libraries which do things beyong imports only as done by loaders -->
     5.1 Reduce size of bundle
     ##const TerserPlugin = require('terser-webpack-plugin');
     ##plugins: [new TerserPlugin()]
@@ -69,7 +69,13 @@
     Clean dist folder before genrating new bundles
     -->CleanWebpackPlugin
     5.5
-     <!-- To not change filenames in html after each build process as bundles are dynamic -->
+       <!-- To not change filenames in html after each build process as bundles are dynamic -->
     Genrating html files automatically during build process using HtmlWebpackPlugin() // but we will have to chnage publicpath to '' from 'dist' bcoz now index.html is in ./dist itself
     5.6
     customizing generated HTML files
+    5.7
+    creating our own template to use in index.html
+    using various template engines like pug, ejs, underscore, handlebars, html-loader
+    Handlebar: a template engine for JS that allows you to separate business logic from presentation.
+    //check config for .hbs files and index.hbs file
+    ==================>Check plugins from webpack docs<===========
