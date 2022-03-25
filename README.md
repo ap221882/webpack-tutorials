@@ -68,3 +68,6 @@
     5.4
     Clean dist folder before genrating new bundles
     -->CleanWebpackPlugin
+    5.5
+    <!-- To not change filenames in html after each build process as bundles are dynamic -->
+    Genrating html files automatically during build process using HtmlWebpackPlugin() // but we will have to chnage publicpath to '' from 'dist' bcoz now index.html is in ./dist itself
