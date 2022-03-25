@@ -57,6 +57,7 @@
 
 5.  Plugins
        <!-- JS libraries which do things beyong imports only as done by loaders -->
+
     5.1 Reduce size of bundle
     ##const TerserPlugin = require('terser-webpack-plugin');
     ##plugins: [new TerserPlugin()]
@@ -70,6 +71,7 @@
     -->CleanWebpackPlugin
     5.5
        <!-- To not change filenames in html after each build process as bundles are dynamic -->
+
     Genrating html files automatically during build process using HtmlWebpackPlugin() // but we will have to chnage publicpath to '' from 'dist' bcoz now index.html is in ./dist itself
     5.6
     customizing generated HTML files
@@ -79,3 +81,22 @@
     Handlebar: a template engine for JS that allows you to separate business logic from presentation.
     //check config for .hbs files and index.hbs file
     ==================>Check plugins from webpack docs<===========
+
+6.  mode enables certain built-in optimizations for production builds and development builds
+    6.1
+    3 values possible : none, development, production
+      <!-- develppment mode uses source maps by default -->
+    6.2 separating dev and production mode
+    6.3 npm install --->webpack-dev-server
+    devServer:{
+    port:9000,
+    static:{
+    directory:path.resolve(\_\_dirname,'./dist')
+    },
+    devMiddleware:{
+    index:'index.html',
+    writeToDisk:true
+    }
+    }
+    in package.json->
+    "dev": "webpack --config webpack.development.config.js" to "dev": "webpack serve --config webpack.development.config.js --hot"
