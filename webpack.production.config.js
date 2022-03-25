@@ -5,9 +5,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    'hello-world': './src/hello-world.js',
+    baby: './src/baby.js',
+  },
   output: {
-    filename: 'bundle.[contenthash].js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, './dist'),
     publicPath: '',
     // publicPath: 'auto',
@@ -15,6 +18,12 @@ module.exports = {
     // publicPath: 'https://some-cdn.com/',
   },
   mode: 'production',
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all',
+  // minSize:3000,//default is 30kbs
+  //   },
+  // },//for common external dpendency
   module: {
     rules: [
       // {
@@ -66,7 +75,7 @@ module.exports = {
   plugins: [
     // new TerserPlugin(),//since included by default
     new MiniCssExtractPlugin({
-      filename: 'styles.[contenthash].css',
+      filename: '[name].[contenthash].css',
     }),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: [
@@ -75,13 +84,28 @@ module.exports = {
       ],
     }),
     new HtmlWebpackPlugin({
+      filename: 'hello-world.html',
+      chunks: ['hello-world'],
       title: 'Hello world',
       // filename: 'subfolder/custom_filename.html',
-      template: 'src/index.hbs',
+      template: 'src/page-template.hbs',
       // meta: {
       //   description: 'Some description',
       // },
       description: 'Some description',
+      minify: false,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'baby.html',
+      chunks: ['baby'],
+      title: 'Baby',
+      // filename: 'subfolder/custom_filename.html',
+      template: 'src/page-template.hbs',
+      // meta: {
+      //   description: 'Some description',
+      // },
+      description: 'Some description',
+      minify: false,
     }),
   ],
 };

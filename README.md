@@ -100,3 +100,5 @@
     }
     in package.json->
     "dev": "webpack --config webpack.development.config.js" to "dev": "webpack serve --config webpack.development.config.js --hot"
+
+Note: webpack takes chunk names from entry point configurations and maps accordingly.
