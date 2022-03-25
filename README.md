@@ -65,3 +65,6 @@
     5.3
     Browser caching
     bundle.[contenthash].js
+    5.4
+    Clean dist folder before genrating new bundles
+    -->CleanWebpackPlugin
