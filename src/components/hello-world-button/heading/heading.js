@@ -7,4 +7,5 @@ class Heading {
     body.appendChild(h1);
   }
 }
+// let name = 'Ajay';
 export default Heading;

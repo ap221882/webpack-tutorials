@@ -62,3 +62,6 @@
     ##plugins: [new TerserPlugin()]
     5.2 Extracting css into a separate bundle with mini-css-extract-plugin
     //extracts css of all components and saves them in a single file--here styles.css
+    5.3
+    Browser caching
+    bundle.[contenthash].js
